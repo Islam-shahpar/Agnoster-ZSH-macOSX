@@ -1,0 +1,46 @@
+1. First open "oh my zsh" github page :
+	- https://github.com/ohmyzsh/ohmyzsh
+
+2. Copy the below command to install via url
+	- sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+3. Edit the .zshrc file with nano to change the Default theme to "agnoster"
+
+4. For color and theme go to https://gist.github.com/matijs/808eda8c133d41f9338f89a0077d6b95
+
+5. Copy the raw content from below link and install it from terminal 
+	-  curl -O https://gist.githubusercontent.com/matijs/808eda8c133d41f9338f89a0077d6b95/raw/b972968988de9d75b237c2c5da848654c3dc5bdc/Solarized%2520Dark.terminal
+
+6. Check the theme after getting installed
+	- open Solarized%2520Dark.terminal
+   
+7. Open terminal preference and set it as default theme
+
+8. Clone the repository for the font 
+	- git clone https://github.com/powerline/fonts.git --depth=1
+
+9. Go to the fonts folder, install the font
+	- cd fonts/
+	- ./install.sh
+
+10. From the terminal preference change the font:
+	- Meslo LG S DZ for powerline
+	- Size : 18
+
+11. After finishing the install follow below process to change the prompt
+
+12. Go to
+	- cd ~/.oh-my-zsh/themes/
+	- nano agnoster.zsh-theme
+
+13. Paste at the end
+	- prompt_context() {
+ 		 if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    		prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  		fi
+		}
+
+14. This makes only your username to appear. If you don't want that too, just comment out this line
+	- prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+
+Source : https://www.youtube.com/watch?v=luSonG4-Xis
